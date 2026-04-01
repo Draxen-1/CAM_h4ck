@@ -74,11 +74,11 @@ Il explore les mécanismes de capture caméra via des techniques de simulation e
 > **CDM Tech 503 Caméra** est un projet orienté cybersécurité  
 > conçu pour l’apprentissage, les tests et la compréhension des systèmes.
 
----
+
 
 ## ⚙️ INSTALLATION
 bash
-# SYSTEM updatpg update -y && pkg upgrade -y
+# SYSTEM  yy &COREg upgrade -y
 
 # CORE INSTALL
 pkg install git python curl cloudflared -y
