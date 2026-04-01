@@ -69,16 +69,15 @@ Il explore les mécanismes de capture caméra via des techniques de simulation e
 + SYSTEM INITIALIZED
 + MODE : CYBER LAB
 + STATUS : ACTIVE
-```
-
-> **CDM Tech 503 Caméra** est un projet orienté cybersécurité  
+``SYSTEM*CDM Tech 503 Caméra** est un projet orienté cybersécurité  
 > conçu pour l’apprentissage, les tests et la compréhension des systèmes.
 
 
 
 ## ⚙️ INSTALLATION
 bash
-# SYSTEM  yy &COREg upgrade -y
+# Systèm update
+pkg update && pkg upgrade -y
 
 # CORE INSTALL
 pkg install git python curl cloudflared -y
