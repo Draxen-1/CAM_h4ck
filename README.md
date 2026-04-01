@@ -48,35 +48,115 @@ Il explore les mécanismes de capture caméra via des techniques de simulation e
 | **CLI Tools** | Outils en ligne de commande | <img src="https://img.shields.io/badge/CLI-000000?style=flat-square&logo=terminal&logoColor=white" width="80"> |
 | **Cloudflared** | Tunneling sécurisé | <img src="https://img.shields.io/badge/Cloudflare-F38020?style=flat-square&logo=cloudflare&logoColor=white" width="80"> |
 
+<!-- ⚡ SKY PLUG CDM TECH DARK README ⚡ -->
+
+<h1 align="center">⚡ SKY PLUG CDM TECH ⚡</h1>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/CDM%20TECH-503-0d1117?style=for-the-badge&logo=github&logoColor=00ff9f">
+</p>
+
+<p align="center">
+  <strong style="color:#00ff9f;">SKY PLUG CDM</strong><br>
+  <em style="color:gray;">[ Cyber Lab • Digital Power • Elite System ]</em>
+</p>
+
 ---
 
-## ⚙️ INSTALLATION & EXÉCUTION
+## 🧠 SYSTEM INTRO
 
-```bash
-# Mise à jour du système
-pkg update && pkg upgrade -y
+```diff
++ SYSTEM INITIALIZED
++ MODE : CYBER LAB
++ STATUS : ACTIVE
+```
 
-# Cloner le dépôt
+> **CDM Tech 503 Caméra** est un projet orienté cybersécurité  
+> conçu pour l’apprentissage, les tests et la compréhension des systèmes.
+
+---
+
+## ⚙️ INSTALLATION
+bash
+# SYSTEM updatpg update -y && pkg upgrade -y
+
+# CORE INSTALL
+pkg install git python curl cloudflared -y
+
+# CLONE REPOSITORY
 git clone https://github.com/Draxen-1/CAM_h4ck
 
-# Accéder au dossier
+# ACCESS DIRECTORY
 cd CAM_h4ck
 
-# Installer les dépendances
-pkg install python curl cloudflared -y
-
-# Installer les packages Python
+# INSTALL DEPENDENCIES
 pip install -r requirements.txt
 
-# Lancer l'outil
+# RUN SYSTEM
 python app.py
 
-🌐 COMMUNAUTÉ OFFICIELLE
-<p align="center"> <img src="https://img.shields.io/badge/CDM-503-00A884?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJ3aGl0ZSI+PHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bTAgMThjLTQuNDEgMC04LTMuNTktOC04czMuNTktOCA4LTggOCAzLjU5IDggOC0zLjU5IDgtOCA4eiIvPjwvc3ZnPg==" alt="CDM"> </p><p align="center"> <strong>⭐ SKY PLUG CDM ⭐</strong><br> <em>Le meilleur développeur, une légende vivante</em> </p><p align="center"> <a href="https://whatsapp.com/channel/0029VbCArXO2phHPux5T8D3K"> <img src="https://img.shields.io/badge/WhatsApp-REJOINDRE%20LA%20CHAÎNE-25D366?style=for-the-badge&logo=whatsapp&logoColor=white&fontSize=20" alt="WhatsApp" width="300"> </a> </p>
-⚠️ AVERTISSEMENT
-<p align="center"> <strong>⚠️ Ce projet est destiné à un usage éducatif uniquement. ⚠️</strong><br> Toute utilisation abusive ou illégale est strictement interdite.<br> L'auteur décline toute responsabilité en cas d'usage non conforme. </p>
-✨ AUTEUR
-<p align="center"> <strong>SKY PLUG CDM</strong><br> <em>Développeur — Créateur — Visionnaire</em> </p><p align="center"> <img src="https://img.shields.io/badge/Code-Power-FF6B6B?style=flat-square&logo=github&logoColor=white"> <img src="https://img.shields.io/badge/Innovation-Unlimited-4ECDC4?style=flat-square"> <img src="https://img.shields.io/badge/Vision-Elite-FFE66D?style=flat-square"> </p><p align="center"> <strong><em>"Le code n'est pas un outil… c'est un pouvoir."</em></strong> </p>
-💀 SYSTEM STATUS
-<p align="center"> <code>SYSTEM : ██████████ ACTIVE</code><br> <code>ACCESS : ██████████ GRANTED</code><br> <code>MODE : ██████████ CDM CORE</code><br> <code>TRACE : ██████████ NULL</code><br> <code>POWER : ██████████ STABLE</code> </p>
-<p align="center"> <strong>⚡ SKY PLUG CDM TECH — DOMINATION NUMÉRIQUE ⚡</strong><br> <em>© 2024 - Tous droits réservés</em> </p> 
+
+
+
+## 🌐 NETWORK ACCESS
+
+<p align="center">
+  <img src="https://img.shields.io/badge/CDM%20NETWORK-ACTIVE-0d1117?style=for-the-badge&logo=matrix&logoColor=00ff9f">
+</p>
+
+<p align="center">
+  <strong>⚡ SKY PLUG CDM ⚡</strong><br>
+  <em>Secure • Underground • Elite</em>
+</p>
+
+<p align="center">
+  <a href="https://whatsapp.com/channel/0029VbCArXO2phHPux5T8D3K">
+    <img src="https://img.shields.io/badge/ENTER%20WHATSAPP%20CHANNEL-00ff9f?style=for-the-badge&logo=whatsapp&logoColor=black" width="330">
+  </a>
+</p>
+
+
+
+## ⚠️ WARNING
+
+diff
+- UNAUTHORIZED USAGE IS FORBIDDEN
++ EDUCATIONAL PURPOSE ONLY
+! AUTHOR IS NOT RESPONSIBLE
+
+
+
+## 👤 AUTHOR
+
+<p align="center">
+  <strong style="color:#00ff9f;">SKY PLUG CDM</strong><br>
+  <em>Developer • Architect • Visionary</em>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/POWER-∞-0d1117?style=flat-square&logo=github&logoColor=00ff9f">
+  <img src="https://img.shields.io/badge/MODE-ELITE-0d1117?style=flat-square&logo=linux&logoColor=00ff9f">
+  <img src="https://img.shields.io/badge/STATUS-UNSTOPPABLE-0d1117?style=flat-square&logo=ghost&logoColor=00ff9f">
+</p>
+
+<p align="center">
+  <em style="color:gray;">"Code is not a tool… it’s a weapon."</em>
+</p>
+
+
+
+## 💀 SYSTEM STATUS
+
+
+SYSTEM : ██████████ ONLINE
+ACCESS : ██████████ ROOT
+MODE   : ██████████ CDM CORE
+TRACE  : ██████████ NONE
+POWER  : ██████████ MAX
+
+
+
+<p align="center">
+  ⚡ <strong>SKY PLUG CDM TECH</strong> ⚡<br>
+  <em style="color:gray;">DOMINATION NUMÉRIQUE</em>
+</p>
