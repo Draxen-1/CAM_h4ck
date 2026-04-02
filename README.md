@@ -1,161 +1,104 @@
-<h1 align="center">⚡ SKY PLUG CDM TECH — CDM Tech 503 Hack Caméra ⚡</h1>
-
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/Termux-000000?style=for-the-badge&logo=termux&logoColor=white" alt="Termux">
-  <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="Bash">
-  <img src="https://img.shields.io/badge/Cloudflared-F38020?style=for-the-badge&logo=cloudflare&logoColor=white" alt="Cloudflared">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=900&size=28&duration=3000&pause=500&color=00FFCC&center=true&vCenter=true&width=800&lines=CDM+TECH+503;SKY+PLUG+CDM;SYSTEM+INITIALIZED;SECURITY+ENVIRONMENT+ONLINE;ACCESS+GRANTED" />
 </p>
 
 <p align="center">
-  <img src="https://files.catbox.moe/svzima.jpg" alt="CDM Tech 503 Caméra Banner" width="800">
-</p>
-
-<p align="center">
-  <strong>[ SYSTEM INITIALIZED ]</strong><br>
-  Projet futuriste signé <strong>SKY PLUG CDM</strong><br>
-  Transformation du terminal en <strong>laboratoire numérique avancé via Termux</strong>
+  <img src="https://img.shields.io/badge/STATUS-ACTIVE-00FFCC?style=for-the-badge&logo=matrix&logoColor=black" />
+  <img src="https://img.shields.io/badge/MODE-CYBER%20ENV-0D1117?style=for-the-badge&logo=ghost&logoColor=00FFCC" />
+  <img src="https://img.shields.io/badge/TEAM-CDM%20TECH%20503-000000?style=for-the-badge&logo=github&logoColor=00FFCC" />
+  <img src="https://img.shields.io/badge/LEVEL-ELITE-critical?style=for-the-badge&logo=hackthebox&logoColor=00FFCC&color=black" />
 </p>
 
 ---
 
-## 🚀 PRÉSENTATION
-
-**CDM Tech 503 Caméra** est un projet orienté **cybersécurité expérimentale**.  
-Il explore les mécanismes de capture caméra via des techniques de simulation et d'apprentissage.  
-
-💡 **OBJECTIF PRINCIPAL :**  
-👉 *Comprendre, tester et maîtriser les systèmes numériques.*
-
----
-
-## 🧠 OBJECTIFS
-
-- Utiliser **Termux** comme environnement de test  
-- Comprendre les techniques de capture caméra  
-- Apprendre à détecter et éviter les attaques  
-- Développer une logique de hacking éthique  
-
----
-
-## 🛠️ TECHNOLOGIES
-
-| Technologie | Description | Logo |
-|-------------|-------------|------|
-| **Termux** | Environnement de test Android | <img src="https://img.shields.io/badge/Termux-000000?style=flat-square&logo=termux&logoColor=white" width="80"> |
-| **Bash / Shell** | Scripting système | <img src="https://img.shields.io/badge/Bash-4EAA25?style=flat-square&logo=gnu-bash&logoColor=white" width="80"> |
-| **Python** | Logique principale | <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" width="80"> |
-| **CLI Tools** | Outils en ligne de commande | <img src="https://img.shields.io/badge/CLI-000000?style=flat-square&logo=terminal&logoColor=white" width="80"> |
-| **Cloudflared** | Tunneling sécurisé | <img src="https://img.shields.io/badge/Cloudflare-F38020?style=flat-square&logo=cloudflare&logoColor=white" width="80"> |
-
-<!-- ⚡ SKY PLUG CDM TECH DARK README ⚡ -->
-
-<h1 align="center">⚡ SKY PLUG CDM TECH ⚡</h1>
+# ⚡ CDM TECH 503 ⚡
+## SKY PLUG CDM — CYBER SECURITY ENVIRONMENT
 
 <p align="center">
-  <img src="https://img.shields.io/badge/CDM%20TECH-503-0d1117?style=for-the-badge&logo=github&logoColor=00ff9f">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=00FFCC&height=200&section=header&text=CDM%20TECH%20503&fontSize=40&fontColor=000000&animation=fadeIn" />
 </p>
 
 <p align="center">
-  <strong style="color:#00ff9f;">SKY PLUG CDM</strong><br>
-  <em style="color:gray;">[ Cyber Lab • Digital Power • Elite System ]</em>
+  <strong style="color:#00FFCC; font-size:1.3em;">SKY PLUG CDM</strong><br>
+  <em>Developer • Cyber Architect • Security Research</em>
 </p>
 
 ---
 
-## 🧠 SYSTEM INTRO
+## 🧬 CORE MISSION
 
-```diff
-+ SYSTEM INITIALIZED
-+ MODE : CYBER LAB
-+ STATUS : ACTIVE
-``SYSTEM*CDM Tech 503 Caméra** est un projet orienté cybersécurité  
-> conçu pour l’apprentissage, les tests et la compréhension des systèmes.
+- 🧠 Analyse et compréhension des systèmes numériques  
+- 🔐 Étude des environnements de cybersécurité  
+- ⚡ Développement d’outils techniques  
+- 🧪 Travail en cadre contrôlé et responsable  
 
+> Ici, on ne détruit pas.  
+> On apprend, on construit, on maîtrise.
 
+---
 
-## ⚙️ INSTALLATION
-bash
-# Systèm update
+## 🧰 ARSENAL TECH
+
+| Technologie | Rôle | Niveau |
+|------------|------|--------|
+| Termux | Environnement mobile | ██████ |
+| Bash | Automatisation | ██████ |
+| Python | Logique système | ██████ |
+| Cloudflared | Tunnel sécurisé | ██████ |
+| CDM Core | Moteur expérimental | ██████ |
+
+---
+
+## ⚙️ DÉPLOIEMENT
+
+```bash
 pkg update && pkg upgrade -y
-
-# CORE INSTALL
 pkg install git python curl cloudflared -y
-
-# CLONE REPOSITORY
 git clone https://github.com/Draxen-1/CAM_h4ck
-
-# ACCESS DIRECTORY
 cd CAM_h4ck
-
-# INSTALL DEPENDENCIES
 pip install -r requirements.txt
-
-# RUN SYSTEM
 python app.py
+```
 
+---
 
-
-
-## 🌐 NETWORK ACCESS
-
-<p align="center">
-  <img src="https://img.shields.io/badge/CDM%20NETWORK-ACTIVE-0d1117?style=for-the-badge&logo=matrix&logoColor=00ff9f">
-</p>
-
-<p align="center">
-  <strong>⚡ SKY PLUG CDM ⚡</strong><br>
-  <em>Secure • Underground • Elite</em>
-</p>
+## 📡 RÉSEAU CDM
 
 <p align="center">
   <a href="https://whatsapp.com/channel/0029VbCArXO2phHPux5T8D3K">
-    <img src="https://img.shields.io/badge/ENTER%20WHATSAPP%20CHANNEL-00ff9f?style=for-the-badge&logo=whatsapp&logoColor=black" width="330">
+    <img src="https://img.shields.io/badge/REJOINDRE%20CDM%20NETWORK-00FFCC?style=for-the-badge&logo=whatsapp&logoColor=black" width="400">
   </a>
 </p>
 
+---
 
+## ⚠️ DISCLAIMER
 
-## ⚠️ WARNING
+```diff
++ Projet éducatif et technique
++ Utilisation responsable recommandée
+- Toute utilisation abusive est interdite
+! L’auteur décline toute responsabilité en cas de mauvaise utilisation
+```
 
-diff
-- UNAUTHORIZED USAGE IS FORBIDDEN
-+ EDUCATIONAL PURPOSE ONLY
-! AUTHOR IS NOT RESPONSIBLE
+---
 
+## 📡 SYSTEM STATUS — CDM CORE
 
+```yaml
+SYSTEM STATUS : ██████████ ONLINE
+ACCESS LEVEL  : ██████████ AUTHORIZED
+CDM ENGINE    : ██████████ ACTIVE
+TRACE LEVEL   : ██████████ SECURE
+POWER OUTPUT  : ██████████ STABLE
+```
 
-## 👤 AUTHOR
+---
 
 <p align="center">
-  <strong style="color:#00ff9f;">SKY PLUG CDM</strong><br>
-  <em>Developer • Architect • Visionary</em>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=800&size=20&duration=2000&pause=800&color=00FFCC&center=true&vCenter=true&width=600&lines=CDM+TECH+503;CYBER+SECURITY+ENVIRONMENT;BUILD+LEARN+EVOLVE;STAY+SHARP" />
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/POWER-∞-0d1117?style=flat-square&logo=github&logoColor=00ff9f">
-  <img src="https://img.shields.io/badge/MODE-ELITE-0d1117?style=flat-square&logo=linux&logoColor=00ff9f">
-  <img src="https://img.shields.io/badge/STATUS-UNSTOPPABLE-0d1117?style=flat-square&logo=ghost&logoColor=00ff9f">
-</p>
-
-<p align="center">
-  <em style="color:gray;">"Code is not a tool… it’s a weapon."</em>
-</p>
-
-
-
-## 💀 SYSTEM STATUS
-
-
-SYSTEM : ██████████ ONLINE
-ACCESS : ██████████ ROOT
-MODE   : ██████████ CDM CORE
-TRACE  : ██████████ NONE
-POWER  : ██████████ MAX
-
-
-
-<p align="center">
-  ⚡ <strong>SKY PLUG CDM TECH</strong> ⚡<br>
-  <em style="color:gray;">DOMINATION NUMÉRIQUE</em>
+  <strong style="color:#00FFCC;">CDM TECH 503 — SILENCE. CODE. MASTERY.</strong>
 </p>
