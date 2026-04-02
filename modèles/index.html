@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>CDM TECH 503 - HACK CAM</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0a0a0a 0%, #0d0d0d 100%);
+      color: #00ffcc;
+      font-family: 'Courier New', 'Segoe UI', 'Fira Code', monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 2rem;
+      position: relative;
+    }
+
+    /* Effet de grille hacker */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(0, 255, 204, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 204, 0.03) 1px, transparent 1px);
+      background-size: 30px 30px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Effet de scanline */
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(transparent 50%, rgba(0, 255, 204, 0.02) 50%);
+      background-size: 100% 4px;
+      pointer-events: none;
+      animation: scan 8s linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes scan {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(100%); }
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 2;
+      animation: glitch 3s infinite;
+    }
+
+    @keyframes glitch {
+      0%, 100% { text-shadow: 0 0 0 #00ffcc; }
+      95% { text-shadow: 0 0 0 #00ffcc; }
+      96% { text-shadow: -2px 0 #ff00cc, 2px 0 #00ffcc; }
+      97% { text-shadow: 2px 0 #ff00cc, -2px 0 #00ffcc; }
+      98% { text-shadow: 0 0 0 #00ffcc; }
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      background: linear-gradient(90deg, #00ffcc, #ff00cc, #00ffcc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: 3px;
+      font-family: monospace;
+      animation: gradient 3s ease infinite;
+      background-size: 200% auto;
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% center; }
+      50% { background-position: 100% center; }
+      100% { background-position: 0% center; }
+    }
+
+    .subtitle {
+      color: #00ffcc;
+      margin-top: 0.5rem;
+      opacity: 0.8;
+      letter-spacing: 2px;
+    }
+
+    .typing-text {
+      border-right: 2px solid #00ffcc;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: #00ffcc; }
+    }
+
+    .gallery-container {
+      width: 90%;
+      max-width: 900px;
+      background: rgba(10, 10, 10, 0.9);
+      border: 1px solid #00ffcc;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 0 30px rgba(0, 255, 204, 0.2);
+      backdrop-filter: blur(5px);
+      position: relative;
+      z-index: 2;
+    }
+
+    .gallery-container::before {
+      content: "[ SYSTEM ONLINE ]";
+      position: absolute;
+      top: -25px;
+      left: 20px;
+      color: #00ffcc;
+      font-size: 0.8rem;
+      font-family: monospace;
+      background: #0a0a0a;
+      padding: 0 10px;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .photo-placeholder {
+      aspect-ratio: 1/1;
+      background: #1a1a1a;
+      border: 1px solid #00ffcc;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #00ffcc;
+      font-size: 2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .photo-placeholder:hover {
+      background: #00ffcc;
+      color: #0a0a0a;
+      box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
+      transform: scale(1.02);
+    }
+
+    .photo-placeholder::after {
+      content: "[ ACCESS ]";
+      position: absolute;
+      bottom: -20px;
+      left: 0;
+      right: 0;
+      background: #00ffcc;
+      color: #0a0a0a;
+      font-size: 0.7rem;
+      text-align: center;
+      transition: bottom 0.3s ease;
+    }
+
+    .photo-placeholder:hover::after {
+      bottom: 0;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    button {
+      background: linear-gradient(135deg, #00ffcc, #0099ff);
+      color: #0a0a0a;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      font-family: monospace;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    button::before {
+      content: ">";
+      position: absolute;
+      left: -20px;
+      transition: left 0.3s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(0, 255, 204, 0.5);
+      background: linear-gradient(135deg, #ff00cc, #00ffcc);
+    }
+
+    button:hover::before {
+      left: 10px;
+    }
+
+    video {
+      display: none;
+    }
+
+    .camera-button {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff00cc, #00ffcc);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0a0a0a;
+      font-size: 2rem;
+      cursor: pointer;
+      box-shadow: 0 0 30px rgba(0, 255, 204, 0.6);
+      z-index: 100;
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 30px rgba(0, 255, 204, 0.6); }
+      50% { transform: scale(1.1); box-shadow: 0 0 50px rgba(255, 0, 204, 0.8); }
+    }
+
+    .camera-button:hover {
+      transform: scale(1.2) rotate(10deg);
+    }
+
+    /* Footer hacker */
+    .footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.8);
+      color: #00ffcc;
+      font-size: 0.8rem;
+      font-family: monospace;
+      z-index: 2;
+      border-top: 1px solid #00ffcc;
+    }
+
+    /* Matrice effet pour certains éléments */
+    .matrix {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.05;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>CDM TECH 503 // HACK CAM</h1>
+    <p class="subtitle typing-text">[ SYSTEM // SKY PLUG CDM - LE MEILLEUR DEV ]</p>
+    <p class="subtitle">[ FAMILLE CDM // UNIS POUR LA DOMINATION ]</p>
+  </div>
+
+  <div class="gallery-container">
+    <div class="photo-grid">
+      <div class="photo-placeholder" id="photo1">📷</div>
+      <div class="photo-placeholder" id="photo2">📷</div>
+      <div class="photo-placeholder" id="photo3">📷</div>
+      <div class="photo-placeholder" id="photo4">📷</div>
+      <div class="photo-placeholder" id="photo5">📷</div>
+      <div class="photo-placeholder" id="photo6">📷</div>
+    </div>
+
+    <div class="controls">
+      <button onclick="startCapture()">[ CAPTURE ]</button>
+      <button onclick="applyEffect()">[ EFFETS ]</button>
+      <button onclick="exportPhotos()">[ EXPORT ]</button>
+    </div>
+  </div>
+
+  <div class="camera-button" onclick="startCapture()">
+    🎯
+  </div>
+
+  <div class="footer">
+    <span>✦ CDM TECH 503 ✦ | SKY PLUG CDM - LEADER | FAMILLE CDM - FORCE ✦ | 🔗 CHAÎNE OFFICIELLE : <a href="https://whatsapp.com/channel/0029VbCArXO2phHPux5T8D3K" style="color:#00ffcc; text-decoration:none;" target="_blank">WHATSAPP CDM</a> ✦</span>
+  </div>
+
+  <video id="video" autoplay></video>
+  
+  <script>
+    let currentPhoto = 1;
+    const photos = {};
+
+    function startCapture() {
+      if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({ video: true })
+          .then(function(stream) {
+            const video = document.getElementById('video');
+            video.srcObject = stream;
+            video.style.display = 'block';
+            video.play();
+
+            setTimeout(() => {
+              capturePhoto(stream);
+            }, 1000);
+          })
+          .catch(function(error) {
+            console.error("Erreur caméra:", error);
+            alert("Accès caméra refusé ou erreur technique");
+          });
+      } else {
+        alert("Navigateur non compatible");
+      }
+    }
+
+    function capturePhoto(stream) {
+      const video = document.getElementById('video');
+      const canvas = document.createElement('canvas');
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      const context = canvas.getContext('2d');
+      context.drawImage(video, 0, 0, canvas.width, canvas.height);
+      
+      const imageData = canvas.toDataURL('image/jpeg');
+      
+      if (currentPhoto <= 6) {
+        const photoDiv = document.getElementById(`photo${currentPhoto}`);
+        photoDiv.style.backgroundImage = `url(${imageData})`;
+        photoDiv.style.backgroundSize = 'cover';
+        photoDiv.style.backgroundPosition = 'center';
+        photoDiv.innerHTML = '';
+        photos[`photo${currentPhoto}`] = imageData;
+        currentPhoto++;
+      } else {
+        alert("Album plein ! Utilisez Exporter pour sauvegarder");
+      }
+      
+      // Arrêter la caméra
+      stream.getTracks().forEach(track => track.stop());
+      video.style.display = 'none';
+    }
+
+    function applyEffect() {
+      alert("🎨 Effets Premium CDM : Filtre Hacker appliqué !");
+    }
+
+    function exportPhotos() {
+      let message = "📸 Photos capturées par CDM TECH 503 :\n";
+      for (let i = 1; i <= 6; i++) {
+        if (photos[`photo${i}`]) {
+          message += `✅ Photo ${i} capturée\n`;
+        } else {
+          message += `❌ Photo ${i} vide\n`;
+        }
+      }
+      message += "\n🔗 Rejoins CDM : https://whatsapp.com/channel/0029VbCArXO2phHPux5T8D3K";
+      alert(message);
+    }
+
+    // Ajouter un effet sonore virtuel (juste pour le style hacker)
+    console.log("%cCDM TECH 503 - SKY PLUG CDM", "color: #00ffcc; font-size: 20px; font-weight: bold;");
+    console.log("%cFamille CDM - Unis pour la domination numérique", "color: #ff00cc; font-size: 14px;");
+    console.log("%cChaîne WhatsApp: https://whatsapp.com/channel/0029VbCArXO2phHPux5T8D3K", "color: #00ffcc;");
+  </script>
+</body>
+</html>
