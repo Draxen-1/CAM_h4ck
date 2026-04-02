@@ -1,7 +1,13 @@
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=900&size=28&duration=3000&pause=500&color=00FFCC&center=true&vCenter=true&width=800&lines=CDM+TECH+503;SKY+PLUG+CDM;SYSTEM+INITIALIZED;SECURITY+ENVIRONMENT+ONLINE;ACCESS+GRANTED" />
 </p>
+<p align="center">
+  <img src="https://files.catbox.moe/lk03mk.png" alt="CDM TECH 503" width="600">
+</p>
 
+<p align="center">
+  <strong style="color:#00FFCC;">CDM TECH 503 — CYBER LAB • ELITE OPS</strong>
+</p>
 <p align="center">
   <img src="https://img.shields.io/badge/STATUS-ACTIVE-00FFCC?style=for-the-badge&logo=matrix&logoColor=black" />
   <img src="https://img.shields.io/badge/MODE-CYBER%20ENV-0D1117?style=for-the-badge&logo=ghost&logoColor=00FFCC" />
